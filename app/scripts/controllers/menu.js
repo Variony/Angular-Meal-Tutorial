@@ -8,7 +8,7 @@
  * Controller of the mealApp
  */
 angular.module('mealApp')
-  .controller('MenuCtrl', ['foodFinder', function (menu) {
+  .controller('MenuCtrl', ['foodFinder', 'orderManager', function (menu, orderManager) {
 
     this.items = menu.getMenu();
 
@@ -18,6 +18,10 @@ angular.module('mealApp')
 
     this.decrement = function(item) {
       item.rating = ((item.rating * 10) - 1) / 10;
+    };
+
+    this.chooseItem = function(menuCategory, menuItemName) {
+      orderManager.chooseMenuOption(menuCategory, menuItemName);
     };
 
   }]);
