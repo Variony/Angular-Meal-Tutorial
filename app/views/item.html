@@ -1,1 +1,12 @@
-<p>This is the item view.</p>
+<h3>{{item.data.name}}</h3>
+
+<dl>
+  <dt>Rating</dt>
+  <dd>{{item.data.rating}}</dd>
+</dl>
+
+<p>
+  <a ui-sref="item.nutrition">Nutrition</a>
+  <a ui-sref="item.reviews">Review</a>
+</p>
+<div ui-view></div>
